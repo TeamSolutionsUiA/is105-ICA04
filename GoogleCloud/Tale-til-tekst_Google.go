@@ -20,7 +20,7 @@ func main() {
 	}
 
 	// Sets the name of the audio file to transcribe.
-	filename := "../Files/backplatsatho_2019-02-17T02_19_01-08_00.mp3"
+	filename := "../Files/audio-file.flac"
 
 	// Reads the audio file into memory.
 	data, err := ioutil.ReadFile(filename)
@@ -31,7 +31,7 @@ func main() {
 	// Detects speech in the audio file.
 	resp, err := client.Recognize(ctx, &speechpb.RecognizeRequest{
 		Config: &speechpb.RecognitionConfig{
-			Encoding:        speechpb.RecognitionConfig_LINEAR16,
+			Encoding:        speechpb.RecognitionConfig_FLAC,
 			SampleRateHertz: 44100,
 			LanguageCode:    "en-US",
 		},
