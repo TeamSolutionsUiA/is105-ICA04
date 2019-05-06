@@ -31,8 +31,8 @@ func main() {
 	// Detects speech in the audio file.
 	resp, err := client.Recognize(ctx, &speechpb.RecognizeRequest{
 		Config: &speechpb.RecognitionConfig{
-			Encoding:        speechpb.RecognitionConfig_FLAC,
-			SampleRateHertz: 44100,
+			Encoding:        speechpb.RecognitionConfig_FLAC, //Definerer at filens encoding er flac
+			SampleRateHertz: 44100,                           //Definerer at filens sample rate er 44100
 			LanguageCode:    "en-US",
 		},
 		Audio: &speechpb.RecognitionAudio{
